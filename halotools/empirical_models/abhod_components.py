@@ -64,14 +64,14 @@ class HeavisideCenAssemBiasModel(hod_components.OccupationComponent):
         # call super-class init routine
         # the instance inherits the basic model of the non-assembly biased model to which it is tied.
 
-        #hod_components.OccupationComponent.__init__(self,
+        #hod_components.OccupationComponent.__init__(self)
         super(HeavisideCenAssemBiasModel,self).__init__(
-            standard_cen_model.gal_type,
-            standard_cen_model.threshold,
-            standard_cen_model.occupation_bound,
+            gal_type=standard_cen_model.gal_type,
+            threshold=standard_cen_model.threshold,
+            occupation_bound=standard_cen_model.occupation_bound,
             prim_haloprop_key=standard_cen_model.prim_haloprop_key,
             sec_haloprop_key=secondary_haloprop_key,
-            param_dict=standard_cen_model.param_dict)
+            input_param_dict=standard_cen_model.param_dict)
 
         # secondary halo property percentile key
         self.sec_haloprop_percentile_key=self.sec_haloprop_key+'_percentile'
